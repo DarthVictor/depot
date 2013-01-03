@@ -48,6 +48,15 @@ class ProductTest < ActiveSupport::TestCase
       assert new_product(name).invalid?, "#{name} shouldn't be valid"
     end
   end
+
+  test "title should have more than 10 letters" do
+      assert Product.new(title: "8letters",
+                     description: "yyyy",
+                     price: 1,
+                     image_url: "image_url.jpg").invalid?,
+             "product with name of 8 letters shouldn't be valid"
+  end
+
   test "product is not valid without a unique title" do
     product = Product.new(title: products(:ruby).title,
                 description: "yyy",
@@ -56,6 +65,7 @@ class ProductTest < ActiveSupport::TestCase
     assert !product.save
     assert_equal "has already been taken", product.errors[:title].join('; ')
   end
+
   test "product is not valid without a unique title - i18n" do
     product = Product.new(title: products(:ruby).title,
                 description: "yyy",
