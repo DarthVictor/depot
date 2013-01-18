@@ -22,7 +22,7 @@ class CartsController < ApplicationController
       redirect_to store_url, notice: 'Несуществующая корзина'
     else
       respond_to do |format|
-        format.html { redirect_to store_url }
+        format.html # show.html.erb
         format.json { render json: @cart }
       end
     end
