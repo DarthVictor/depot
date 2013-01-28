@@ -6,6 +6,6 @@
     <td class="total_cell"><%= number_to_currency(cart.total_price) %></td>
   </tr>
 </table>
-
+<%= button_to "Оформление заказа", new_order_path, method: :get %>
 <%= button_to 'Очистить корзину', @cart, method: :delete,
   data: { confirm: 'Вы уверены, что хотите очистеть корзину?' } %>
