@@ -30,6 +30,7 @@ class OrdersController < ApplicationController
     @cart = current_cart
     if @cart.line_items.empty?
       redirect_to store_url, notice: "Ваша корзина пока пуста."
+      return
     end
 
     @order = Order.new
@@ -54,6 +55,7 @@ class OrdersController < ApplicationController
       if @order.save
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
+        OrderNotifier.received(@order).deliver
         format.html { redirect_to store_url,
                           notice: 'Thank you for your order.' }
         format.json { render json: @order, status: :created, location: @order }
