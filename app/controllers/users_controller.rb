@@ -46,7 +46,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to users_url, notice: 'Пользователь #{@user.name} был успешно создан.' }
+        format.html { redirect_to users_url, notice: "Пользователь #{@user.name} был успешно создан." }
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render action: "new" }
@@ -62,7 +62,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to users_url, notice: 'Сведения о пользователе #{@user.name} были успешно обновлены.' }
+        format.html { redirect_to users_url, notice: "Сведения о пользователе #{@user.name} были успешно обновлены." }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
