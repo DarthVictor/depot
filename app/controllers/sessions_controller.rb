@@ -1,3 +1,5 @@
+#!/bin/env ruby
+# encoding: utf-8
 class SessionsController < ApplicationController
   def new
 
@@ -14,5 +16,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    session[:user_id] = nil
+    redirect_to store_url, notice: "Сеанс работы завершен"
   end
 end
