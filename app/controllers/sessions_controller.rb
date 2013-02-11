@@ -1,8 +1,9 @@
 #!/bin/env ruby
 # encoding: utf-8
 class SessionsController < ApplicationController
-  def new
+  skip_before_filter :authorize
 
+  def new
   end
 
   def create
