@@ -1,0 +1,59 @@
+ru:
+  thanks: "Спасибо за заказ."
+
+  number:
+    currency:
+      format:
+        unit: "долл."
+        precision: 2
+        separator: "."
+        delimiter: " "
+        format: "%n%u"
+
+  activerecord:
+    models:
+      order:       "заказ"
+    attributes:
+      order:
+        address:   "Адрес"
+        name:      "Имя"
+        email:     "E-mail"
+        pay_type: "Способ оплаты"
+    errors:
+      messages:
+        inclusion: " - выберети поле из списка"
+        blank:     " - обязательное поле"
+  errors:
+    template:
+      body:        "Ошибки:"
+      header:
+        one:       "При заполенениии формы возникла ошибка"
+        other:     "При заполенениии формы возникли %{count} ошибки"
+
+  layouts:
+    application:
+      title:       "Книжная полка прагматика"
+      home:        "Главная"
+      questions:   "ЧаВо"
+      news:        "Новости"
+      contact:     "Наши контакты"
+  store:
+    index:
+      title_html:  "Каталог прагматика"
+      add_html:    "Положить в корзину"
+  carts:
+    cart:
+      title: "Корзина"
+      empty: "Очистить корзину"
+      checkout: "Оплатить"
+      confirmation: "Вы уверены, что хотите очистеть корзину?"
+  orders:
+    new:
+      legend: "Пожалуйста, введите ваши данные"
+    form:
+      name: "Имя"
+      address_html: "Адрес"
+      email: "E-mail"
+      pay_type: "Способ оплаты"
+      pay_prompt_html: "Выберите способ оплаты"
+      submit: "Оформить заказ"
