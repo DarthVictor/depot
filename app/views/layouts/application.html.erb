@@ -9,7 +9,7 @@
 <body class="<%= controller.controller_name %>">
     <div id="banner">
         <%= image_tag("logo.png") %>
-        <%= @page_title || "Pragmatic Bookshelf" %>
+        <%= @page_title || t('.title')%>
     </div>
     <div id="columns">
         <div id="side">
@@ -20,10 +20,10 @@
           <% end %>
 
           <ul>
-            <li><a href="/">Главная</a></li>
-            <li><a href="/faq">FAQ</a></li>
-            <li><a href="/news">Новости</a></li>
-            <li><a href="/contact">Контакты</a></li>
+            <li><a href="/"></a><%= t('.home') %></li>
+            <li><a href="/faq"></a><%= t('.questions') %></li>
+            <li><a href="/news"></a><%= t('.news') %></li>
+            <li><a href="/contact"></a><%= t('.contact') %></li>
           </ul>
 
           <% if session[:user_id] %>
@@ -41,3 +41,7 @@
     </div>
 </body>
 </html>
+Главная
+FAQ
+Новости
+Контакты
